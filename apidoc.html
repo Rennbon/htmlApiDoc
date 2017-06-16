@@ -19,7 +19,7 @@
             <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#top">checkList api doc 文档</a>
+                        <a href="#top">api doc 文档</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -37,7 +37,17 @@
                     <ul class="nav list-group bs_list_group">
                         
                             <li>
-                                <span>checkListApi</span>
+                                <span>项目模板2期</span>
+                                <ul class="nav list-group">
+                                    
+                                    <li>
+                                        <a href="#a1e3593b305645309e5a1076bfb8366d">1:将项目保存为我的项目模板</a>
+                                    </li><li>
+                                        <a href="#ee75a0132119459880a6b907430ed7cb">2:获取模板分类列表</a>
+                                    </li><li>
+                                        <a href="#5f924001f88b45a4b83117526dec8227">3:按照分类id获取分类模板列表（byTemplateTypeName是因为历史原因）</a>
+                                    </li>
+                                </ul><span>checkListApi</span>
                                 <ul class="nav list-group">
                                     
                                     <li>
@@ -83,7 +93,156 @@
             <div class="col-md-9 docs_main">
                 <div class="block-doc-one">
                     
-                    <h1 id="t_api_doc">checkListApi</h1>
+                    <h1 id="t_api_doc">项目模板2期</h1>
+                    
+                    <div class="api-one">
+                        <h3 id="a1e3593b305645309e5a1076bfb8366d">1:将项目保存为我的项目模板</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=a1e3593b305645309e5a1076bfb8366d" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=a1e3593b305645309e5a1076bfb8366d" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：POST</p>
+                        <p>
+                            请求地址：{{host}}/v1/task/save_as_my_folder_template                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>folder_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>项目id</td>
+                                            <td>7dccd963-5134-4bef-a7c2-291c79b0f02a</td>
+                                        </tr><tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>0deb19343666407db599d479de8b4568</td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">//成功</span></div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span><div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">//超过100个上限<br></span><div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>error_msg<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"保存失败，我的模板至多创建100个"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>error_code<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">30020</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;"><br></span></div></div></div>
+                        </div>
+                        </p>
+                                                
+                        
+                    </div><div class="api-one">
+                        <h3 id="ee75a0132119459880a6b907430ed7cb">2:获取模板分类列表</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=ee75a0132119459880a6b907430ed7cb" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=ee75a0132119459880a6b907430ed7cb" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v1/task/get_template_types                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>0deb19343666407db599d479de8b4568</td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>data<span class="q" style="display: inline-block;">"</span></span>: [<ul class="array level1 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"0"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"常用模板"</span>,</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>templates<span class="q" style="display: inline-block;">"</span></span>: [<ul class="array level3 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"空白项目"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>title<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>icon<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"5940f770cd06812aa01b18c6"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"需求管理"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>title<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>icon<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"000000000000000000000001"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"需求管理"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>title<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"适用于产品需求管理和追踪"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>icon<span class="q" style="display: inline-block;">"</span></span>: <a href="https://images/folderTemplate/icon-research_development.jpg" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://images/folderTemplate/icon-research_development.jpg<span class="q" style="display: inline-block;">"</span></a></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"000000000000000000000401"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"律所案件管理"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>title<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"适用于律所的案件管理"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>icon<span class="q" style="display: inline-block;">"</span></span>: <a href="https://images/folderTemplate/icon-contacts_card_email.jpg" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://images/folderTemplate/icon-contacts_card_email.jpg<span class="q" style="display: inline-block;">"</span></a></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"000000000000000000000301"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"营销活动"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>title<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"适用于市场营销活动的策划和管理"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>icon<span class="q" style="display: inline-block;">"</span></span>: <a href="https://images/folderTemplate/icon-marketing_management.jpg" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://images/folderTemplate/icon-marketing_management.jpg<span class="q" style="display: inline-block;">"</span></a></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"000000000000000000000201"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"销售漏斗"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>title<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"记录客户信息，持续推进追踪"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>icon<span class="q" style="display: inline-block;">"</span></span>: <a href="https://images/folderTemplate/icon-task_funnel.jpg" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://images/folderTemplate/icon-task_funnel.jpg<span class="q" style="display: inline-block;">"</span></a></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"000000000000000000000101"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"OKR管理"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>title<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"适用于团队的OKR管理"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>icon<span class="q" style="display: inline-block;">"</span></span>: <a href="https://images/folderTemplate/icon-playlist_add_check.jpg" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://images/folderTemplate/icon-playlist_add_check.jpg<span class="q" style="display: inline-block;">"</span></a></li></ul>}</li></ul>]</li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"-1"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"我的模板"</span></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"1"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"产品研发"</span></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"行政人事"</span></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"3"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"销售管理"</span></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"4"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"市场营销"</span></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"5"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_type_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"其他行业"</span></li></ul>}</li></ul>],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span><br></div>
+                        </div>
+                        </p>
+                                                
+                        
+                    </div><div class="api-one">
+                        <h3 id="5f924001f88b45a4b83117526dec8227">3:按照分类id获取分类模板列表（byTemplateTypeName是因为历史原因）</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=5f924001f88b45a4b83117526dec8227" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=5f924001f88b45a4b83117526dec8227" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v1/task/get_templates_by_template_type_name                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td></td>
+                                            <td>0deb19343666407db599d479de8b4568</td>
+                                        </tr><tr>
+                                            <td>template_type_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td></td>
+                                            <td>0</td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>data<span class="q" style="display: inline-block;">"</span></span>: [<ul class="array level1 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"000000000000000000000201"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>template_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"销售漏斗"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>title<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"记录客户信息，持续推进追踪"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>icon<span class="q" style="display: inline-block;">"</span></span>: <a href="https://images/folderTemplate/icon-task_funnel.jpg" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://images/folderTemplate/icon-task_funnel.jpg<span class="q" style="display: inline-block;">"</span></a></li></ul>}</li></ul>],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span></div>
+                        </div>
+                        </p>
+                                                
+                        
+                    </div><h1 id="t_api_doc">checkListApi</h1>
                     
                     <div class="api-one">
                         <h3 id="02b5f7bfed7a4af0bbeb011eb690c122">获取item转task的网络id和项目id</h3>
@@ -93,7 +252,7 @@
                         </p>
                         <p>请求方式：GET</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/get_projectId_and_folder_for_item_convert_task                        </p>
+                            请求地址：{{host}}/v1/task/get_projectId_and_folder_for_item_convert_task                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -144,7 +303,7 @@
                         </p>
                         <p>请求方式：GET</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/get_checklists_with_items                        </p>
+                            请求地址：{{host}}/v1/task/get_checklists_with_items                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -195,7 +354,7 @@
                         </p>
                         <p>请求方式：POST</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/add_checkList                        </p>
+                            请求地址：{{host}}/v1/task/add_checkList                        </p>
                         
                         <table class="table table-hover">
                                 <colgroup>
@@ -302,7 +461,7 @@
                         </p>
                         <p>请求方式：POST</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/update_checklist_index                        </p>
+                            请求地址：{{host}}/v1/task/update_checklist_index                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -359,7 +518,7 @@
                         </p>
                         <p>请求方式：POST</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/update_checkList_name                        </p>
+                            请求地址：{{host}}/v1/task/update_checkList_name                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -416,7 +575,7 @@
                         </p>
                         <p>请求方式：POST</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/remove_checklist                        </p>
+                            请求地址：{{host}}/v1/task/remove_checklist                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -467,7 +626,7 @@
                         </p>
                         <p>请求方式：POST</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/add_items                        </p>
+                            请求地址：{{host}}/v1/task/add_items                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -524,7 +683,7 @@
                         </p>
                         <p>请求方式：POST</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/update_item_index                        </p>
+                            请求地址：{{host}}/v1/task/update_item_index                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -587,7 +746,7 @@
                         </p>
                         <p>请求方式：POST</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/update_item_name                        </p>
+                            请求地址：{{host}}/v1/task/update_item_name                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -644,7 +803,7 @@
                         </p>
                         <p>请求方式：POST</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/update_item_status                        </p>
+                            请求地址：{{host}}/v1/task/update_item_status                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -701,7 +860,7 @@
                         </p>
                         <p>请求方式：POST</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/remove_item                        </p>
+                            请求地址：{{host}}/v1/task/remove_item                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -752,7 +911,7 @@
                         </p>
                         <p>请求方式：POST</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v1/task/add_task                        </p>
+                            请求地址：{{host}}/v1/task/add_task                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -881,7 +1040,7 @@
                         </p>
                         <p>请求方式：GET</p>
                         <p>
-                            请求地址：http://172.17.10.177:9997/v2/task/get_task_topics                        </p>
+                            请求地址：{{host}}/v2/task/get_task_topics                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -947,35 +1106,7 @@
                      <div class="api-one">
                         <h3 id="envs"> 环境变量</h3>
                         
-                        <h5><span class="label label-danger">http://localhost:7432/</span></h5>
-                            <table class="table table-hover" style="margin-top: 7px;">
-                                <colgroup>
-                                <col class="col-xs-4">
-                                <col class="col-xs-8">
-                              </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>变量名</th>
-                                        <th>变量值</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                                                    </tbody>
-                            </table><h5><span class="label label-danger">http://api3/</span></h5>
-                            <table class="table table-hover" style="margin-top: 7px;">
-                                <colgroup>
-                                <col class="col-xs-4">
-                                <col class="col-xs-8">
-                              </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>变量名</th>
-                                        <th>变量值</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                                                    </tbody>
-                            </table>
+                        
                      </div>
 
                      
