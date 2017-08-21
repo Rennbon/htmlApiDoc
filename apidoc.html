@@ -37,12 +37,30 @@
                     <ul class="nav list-group bs_list_group">
                         
                             <li>
-                                <span>任务自定义字段3期</span>
+                                <span>任务甘特图1期</span>
                                 <ul class="nav list-group">
                                     
                                     <li>
+                                        <a href="#62a6aee9d5924f979a47ecbe86eac455">获取未关联项目的任务列表(新增time_format,必须穿true)</a>
+                                    </li><li>
+                                        <a href="#881b0153af1346158eb0a621fd859c0f">修改任务开始时间及截止时间</a>
+                                    </li><li>
+                                        <a href="#e2bc1486eff44b0d9a436e282e6ce301">创建任务(新增start_time和time_format)</a>
+                                    </li><li>
                                         <a href="#0bef6ec64a8c498baa5418d7cc8c480f">获取项目看板首页视图任务列表</a>
                                     </li><li>
+                                        <a href="#1e777684c799443c8e472c66d450a610">获取项目下成员任务甘特图用列表</a>
+                                    </li><li>
+                                        <a href="#fd741e76ea2e4935b739fe54359e7fb5">获取指定任务的子任务列表(新增time_format,必须穿true)</a>
+                                    </li><li>
+                                        <a href="#1fd250abbbec4f4b8cd8dc962b4268b6">获取子任务详情(新增time_format,必须穿true)</a>
+                                    </li><li>
+                                        <a href="#396536b8c7484edbbd11529333ce8482">获取任务列表(新增time_format,必须穿true)</a>
+                                    </li>
+                                </ul><span>任务自定义字段3期</span>
+                                <ul class="nav list-group">
+                                    
+                                    <li>
                                         <a href="#dd65d228dbf249a39272fe4f16a0f46a">修改项目模板任务范围作用域</a>
                                     </li>
                                 </ul><span>checkListApi</span>
@@ -70,8 +88,6 @@
                                         <a href="#0739ea05c6284ef5b6804ad67fb4f30c">修改检查项的状态</a>
                                     </li><li>
                                         <a href="#0b4ac224aae24581bdc1b2d578724fe1">删除检查项</a>
-                                    </li><li>
-                                        <a href="#e2bc1486eff44b0d9a436e282e6ce301">检查项转任务</a>
                                     </li><li>
                                         <a href="#0cdefc17008041f1addac6f160e25df8">获取讨论列表</a>
                                     </li>
@@ -101,9 +117,318 @@
             <div class="col-md-9 docs_main">
                 <div class="block-doc-one">
                     
-                    <h1 id="t_api_doc">任务自定义字段3期</h1>
+                    <h1 id="t_api_doc">任务甘特图1期</h1>
                     
                     <div class="api-one">
+                        <h3 id="62a6aee9d5924f979a47ecbe86eac455">获取未关联项目的任务列表(新增time_format,必须穿true)</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=62a6aee9d5924f979a47ecbe86eac455" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=62a6aee9d5924f979a47ecbe86eac455" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v2/task/get_orphaned_tasks                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>project_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>网络ID，与好友协作传空</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>page_index</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>请求页码</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>page_size</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>请求页面尺寸</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>tag_ids</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>标签id数组,英文逗号拼接</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>without_tag</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>不包含标签，true为不包含</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>status</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>筛选任务状态 默认0：进行中；1：已完成；-1：全部</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>sort</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>任务排序 1：按首字母;2:按到期日期;3:按任务创建时间；4:按项目(查询结果结构有变化);5:任务负责人；7：按颜色；8:完成时间；9:进行中;10:最近更新</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>time_format</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>starttime和deadline的格式问规则，false:兼容老的，true:全格式输出</td>
+                                            <td></td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        
+                                                
+                        
+                    </div><div class="api-one">
+                        <h3 id="881b0153af1346158eb0a621fd859c0f">修改任务开始时间及截止时间</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=881b0153af1346158eb0a621fd859c0f" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=881b0153af1346158eb0a621fd859c0f" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：POST</p>
+                        <p>
+                            请求地址：{{host}}/v2/task/update_task_start_time_and_deadline                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>94ac3d1f179d490ab0d760348bd70866</td>
+                                        </tr><tr>
+                                            <td>task_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>任务Id</td>
+                                            <td>ff696ccf-4794-4dc9-a1c3-4a3526485cd3</td>
+                                        </tr><tr>
+                                            <td>start_time</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>开始时间(空为不设置，时间格式为2017-08-04 21:00或2017-08-04 21:00:00)</td>
+                                            <td>2017-08-04 21:00</td>
+                                        </tr><tr>
+                                            <td>deadline</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>截止时间(空为不设置，时间格式为2017-08-04 21:00或2017-08-04 21:00:00)</td>
+                                            <td>2017-08-10 10:00</td>
+                                        </tr><tr>
+                                            <td>time_lock</td>
+                                            <td>boolean</td>
+                                            <td>否</td>
+                                            <td>修改时间规则，null ：开始时间截止时间都修改，true：只修改开始时间，false只修改截止时间</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>update_type</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>妥协类型（单个）（见返回值详细描述）</td>
+                                            <td></td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{//如果没有冲突则返回值中不会有data字段，如果有data字段，继续操作的请求必须要是data中带回来的数据做2次请求，有流程逻辑</span><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px;"><li style="position: relative;"><div class="collapser" style="font-family: consolas; font-size: 12px; white-space: pre-wrap; position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="font-family: consolas; font-size: 12px; white-space: pre-wrap; color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>data<span class="q" style="display: inline-block;">"</span></span><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">: { </span><ul class="obj level1 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="font-family: consolas; font-size: 12px; white-space: pre-wrap; position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>time_lock<span class="q" style="display: inline-block;">"</span></span>: <span class="null" style="color: rgb(67, 31, 255);">null</span>,  //bool? 下次请求time_lock需要使用的值</li><li style="position: relative;"><div class="collapser" style="font-family: consolas; font-size: 12px; white-space: pre-wrap; position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="font-family: consolas; font-size: 12px; white-space: pre-wrap; color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>update_types<span class="q" style="display: inline-block;">"</span></span><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">: [  //array[int] 妥协类型，如果不取消继续执行，必须是当前接口返回值中的一个，比如返回的update_types为[2,3]，则继续操作的请求的update_type必须是2或者3</span><ul class="array level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span style="color: rgb(67, 31, 255); font-family: consolas; font-size: 12px; white-space: pre-wrap;">0,&nbsp;&nbsp;&nbsp;&nbsp;//默认值
+1,&nbsp;&nbsp;&nbsp;&nbsp;//所有子任务不早于X月X日X点开始，截止时间不变
+2, &nbsp;&nbsp;&nbsp;//母任务开始时间设为当前最早子任务开始时间相同
+3,&nbsp;&nbsp;&nbsp;&nbsp;//修改后的母任务截止时间早于子任务列表中的最晚截止时间，晚于此截止时间的子任务的截止时间将设为和母任务相同
+4,&nbsp;&nbsp;&nbsp;&nbsp;//子任务的开始时间不能早于母任务的开始时间，是否继承母任务的开始时间
+5,&nbsp;&nbsp;&nbsp;&nbsp;//子任务的截止时间不能晚于母任务的截止时间，是否继承母任务的截止时间?</span><br></li><li style="font-family: consolas; font-size: 12px; white-space: pre-wrap; position: relative;"><span class="num" style="color: rgb(67, 31, 255);"></span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">]</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">},</span></li><li style="font-family: consolas; font-size: 12px; white-space: pre-wrap; position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span></div>
+                        </div>
+                        </p>
+                                                
+                        
+                    </div><div class="api-one">
+                        <h3 id="e2bc1486eff44b0d9a436e282e6ce301">创建任务(新增start_time和time_format)</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=e2bc1486eff44b0d9a436e282e6ce301" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=e2bc1486eff44b0d9a436e282e6ce301" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：POST</p>
+                        <p>
+                            请求地址：{{host}}/v1/task/add_task                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>2422991b34a0436c95196cce3ec1c974</td>
+                                        </tr><tr>
+                                            <td>task_name</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>任务名</td>
+                                            <td>检查项转任务</td>
+                                        </tr><tr>
+                                            <td>task_description</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>任务描述</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>parent_id</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>母任务id</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>charge_user_account_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>负责人id</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>members</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>任务成员ID多个以，相隔</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>folder_id</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>项目id（get_projectId_and_folder_for_item_convert_task接口获得的folder_id,可以重新指定</td>
+                                            <td>c35c71dc-e21f-4904-a03d-4c2e878c1b91</td>
+                                        </tr><tr>
+                                            <td>post_id</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>动态id</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>folder_stage_id</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>项目看板Id</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>is_star</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>标星</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>project_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>网络id（get_projectId_and_folder_for_item_convert_task接口获得的project_id,可以重新指定）</td>
+                                            <td>c4c197af-2d49-4c6e-9eae-c197e361b743</td>
+                                        </tr><tr>
+                                            <td>attachments</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>附件Json</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>knowledge_attach</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>知识附件Json</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>item_id</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>检查项id（接口执行成功后会删除对应检查项）</td>
+                                            <td>5915277361cfa23158204507</td>
+                                        </tr><tr>
+                                            <td>deadline</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>截止时间(空为不设置，时间格式为2017-08-04 21:00或2017-08-04 21:00:00)</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>start_time</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>开始时间(空为不设置，时间格式为2017-08-04 21:00或2017-08-04 21:00:00)</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>time_format</td>
+                                            <td>boolean</td>
+                                            <td>否</td>
+                                            <td>starttime和deadline的格式问规则，false:兼容老的，true:全格式输出</td>
+                                            <td></td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><br></div><div><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;"><br></div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>data<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level1 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>task_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"be2fbbc6-1c25-4288-be8e-2f71a68bef6c"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>task_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"检查项转任务"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>project_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"北京联拓天际电子商务"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>des<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_lock<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>color<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_member<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>current_user_type<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>dead_line<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status_last_modify_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-05-12 12:05"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status_last_modify_user<span class="q" style="display: inline-block;">"</span></span>: <span class="null" style="color: rgb(67, 31, 255);">null</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>sub_count<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>create_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-05-12 12:05"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_favorite<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>permission<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span>,</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;"><br></div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>charge_user<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"陈霄毅"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>avatar<span class="q" style="display: inline-block;">"</span></span>: <a href="https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0<span class="q" style="display: inline-block;">"</span></a>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;"><br></div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>members<span class="q" style="display: inline-block;">"</span></span>: [<ul class="array level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;"><br></div>{<ul class="obj level3 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>member_type<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>apply_type<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"陈霄毅"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>en_full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"chenxiaoyi_cxy"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>mobile_phone<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>email<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"eve@md.md"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>avatar<span class="q" style="display: inline-block;">"</span></span>: <a href="https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0<span class="q" style="display: inline-block;">"</span></a>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>company_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"这是公司"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>profession<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"这是职位"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span></li></ul>}</li></ul>],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_notice<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span>,</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;"><br></div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>folder<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>folder_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"c35c71dc-e21f-4904-a03d-4c2e878c1b91"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>folder_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"111111111"</span></li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>charge_user_account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>task_status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>project_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"c4c197af-2d49-4c6e-9eae-c197e361b743"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>parent_task_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>completed_num<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>update_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-05-12 12:05"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>topic_count<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_new_task<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>stage_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"c1f6ce0c-48a0-4d56-bf9a-94527876e92d"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>stage_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"进行中"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_predefined<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>sub_tasks<span class="q" style="display: inline-block;">"</span></span>: [ ],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>categorys<span class="q" style="display: inline-block;">"</span></span>: [ ],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>classify<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span></li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span><br></div></div>
+                        </div>
+                        </p>
+                                                
+                        
+                    </div><div class="api-one">
                         <h3 id="0bef6ec64a8c498baa5418d7cc8c480f">获取项目看板首页视图任务列表</h3>
                         <p>
                             <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=0bef6ec64a8c498baa5418d7cc8c480f" class="label label-warning">在线测试</a>
@@ -111,7 +436,7 @@
                         </p>
                         <p>请求方式：GET</p>
                         <p>
-                            请求地址：{{host}}/v2/task/Get_Folder_Task_List                        </p>
+                            请求地址：{{host}}/v2/task/get_folder_task_list                        </p>
                         
                                                 
                                                     <table class="table table-hover">
@@ -204,6 +529,24 @@
                                             <td>否</td>
                                             <td>true:显示外露控件，false：不显示</td>
                                             <td>false</td>
+                                        </tr><tr>
+                                            <td>other</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>其他人aid（查看他人用）</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>keywords</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>关键字</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>time_format</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>starttime和deadline的格式问规则，false:兼容老的，true:全格式输出</td>
+                                            <td></td>
                                         </tr>                                    </tbody>
                                 </table>                        
                         <p>详细说明：</p>
@@ -215,6 +558,305 @@
                                                 
                         
                     </div><div class="api-one">
+                        <h3 id="1e777684c799443c8e472c66d450a610">获取项目下成员任务甘特图用列表</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=1e777684c799443c8e472c66d450a610" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=1e777684c799443c8e472c66d450a610" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v2/task/get_folder_task_gantt                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>94ac3d1f179d490ab0d760348bd70866</td>
+                                        </tr><tr>
+                                            <td>folder_Id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>项目id</td>
+                                            <td>0d6e0512-b053-4784-83c6-179314329e06</td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>data<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level1 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"987d5e0f-07a8-46e5-8394-df0d04d34ce7"</span>, //string 项目Id</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>time<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1503042409282</span>,  //long 时间戳</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>chargeTasksKV<span class="q" style="display: inline-block;">"</span></span>: [   //Object 人员任务KeyValue  1对多<ul class="array level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level3 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>charge<span class="q" style="display: inline-block;">"</span></span>: { //Object 负责人<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>accountId<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,  //string 用户id</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>fullname<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"陈霄毅"</span>, &nbsp;&nbsp;&nbsp;&nbsp;//string 用户名</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>avatar<span class="q" style="display: inline-block;">"</span></span>: <a href="https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0%7CimageView2/1/w/48/h/48/q/90" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="color: rgb(67, 31, 255); font-size: 13px; display: inline-block;">"</span><span style="color: rgb(67, 31, 255); font-size: 13px;">https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0%7CimageView2/1/w/48/h/48/q/90</span><span class="q" style="color: rgb(67, 31, 255); font-size: 13px; display: inline-block;">"</span></a>   //string 头像url</li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>tasks<span class="q" style="display: inline-block;">"</span></span>: [    //array[object] 任务列表<ul class="array level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level5 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>taskId<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"08829e72-29be-4190-94da-0584e7dd665f"</span>,    //string 任务id</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>taskName<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"3"</span>,&nbsp;&nbsp;&nbsp;&nbsp;//string 任务名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>startTime<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-08-03 20:00:00"</span>,&nbsp;&nbsp;&nbsp;&nbsp;//string 开始时间，&nbsp;&nbsp;未设置时为空 &nbsp;&nbsp;</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>deadline<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-08-13 20:00:00"</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//string 截止时间，&nbsp;&nbsp;未设置时为空 &nbsp;&nbsp;</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//int 任务状态 0：进行中 1：完成</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>completeTime<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-08-14 20:00:00"</span>, //string 只有完成状态才会有值，未完成时为空</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>ancestors<span class="q" style="display: inline-block;">"</span></span>: [ ],  //array[string]  所有母任务数组</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>subTaskIds<span class="q" style="display: inline-block;">"</span></span>: [ ],  //array[string]  所有子任务数组</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>parentId<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""&nbsp;&nbsp; &nbsp;//直接母任务</span></li></ul>}</li></ul>]</li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level3 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>charge<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>accountId<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"user-undefined"</span>,  </li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>fullname<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"未指定"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>avatar<span class="q" style="display: inline-block;">"</span></span>: <a href="https://dn-mdpic.qbox.me/UserAvatar/default.gif?imageView2/1/w/48/h/48/q/90" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://dn-mdpic.qbox.me/UserAvatar/default.gif?imageView2/1/w/48/h/48/q/90<span class="q" style="display: inline-block;">"</span></a></li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>tasks<span class="q" style="display: inline-block;">"</span></span>: [ ]</li></ul>}</li></ul>],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>maxTime<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,  //时间轴最大时间</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>minTime<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""   //时间轴最小时间</span></li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span><br></div>
+                        </div>
+                        </p>
+                                                
+                        
+                    </div><div class="api-one">
+                        <h3 id="fd741e76ea2e4935b739fe54359e7fb5">获取指定任务的子任务列表(新增time_format,必须穿true)</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=fd741e76ea2e4935b739fe54359e7fb5" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=fd741e76ea2e4935b739fe54359e7fb5" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v2/task/get_direct_children_tasks                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>task_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>任务Id</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>time_format</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>starttime和deadline的格式问规则，false:兼容老的，true:全格式输出</td>
+                                            <td></td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        
+                                                
+                        
+                    </div><div class="api-one">
+                        <h3 id="1fd250abbbec4f4b8cd8dc962b4268b6">获取子任务详情(新增time_format,必须穿true)</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=1fd250abbbec4f4b8cd8dc962b4268b6" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=1fd250abbbec4f4b8cd8dc962b4268b6" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v2/task/get_direct_children_tasks                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>94ac3d1f179d490ab0d760348bd70866</td>
+                                        </tr><tr>
+                                            <td>task_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>任务Id</td>
+                                            <td>e0c8507a-66ee-450c-93b7-5c509f117c1f</td>
+                                        </tr><tr>
+                                            <td>time_format</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>starttime和deadline的格式问规则，false:兼容老的，true:全格式输出</td>
+                                            <td>true</td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        
+                                                
+                        
+                    </div><div class="api-one">
+                        <h3 id="396536b8c7484edbbd11529333ce8482">获取任务列表(新增time_format,必须穿true)</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=396536b8c7484edbbd11529333ce8482" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=396536b8c7484edbbd11529333ce8482" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v2/task/get_task_list                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>filter_type</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>过滤类型 默认1：我参与的任务；2：我负责的任务；3：我托付的任务；6：全部任务  7：查看同事(与我协作的任务)</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>project_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>网络ID，与好友协作传空</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>page_index</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>请求页码</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>page_size</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>请求页面尺寸</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>folder_id</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>项目ID 没有项目要传入Null</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>stage_id</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>项目阶段id</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>tag_ids</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>标签id数组,英文逗号拼接</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>without_tag</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>不包含标签，true为不包含</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>status</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>筛选任务状态 默认0：进行中；1：已完成；-1：全部</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>other</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>指定用户编号 查看其他同事的任务列表</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>classifys</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>不过滤 -1 现在要做 Now = 1，将要做 Will = 2, 以后再说 After = 3</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>sort</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>任务排序 1：按首字母;2:按到期日期;3:按任务创建时间；4:按项目(查询结果结构有变化);5:任务负责人；7：按颜色；8:完成时间；9:进行中;10:最近更新</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>complete_time</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>查询的时间起始点，当sort为8时(查询时间到当前的) 格式(2015-06-10)</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>keywords</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>关键词模糊搜索</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>is_star</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>过滤是否标星，true为过滤</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>time_format</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>starttime和deadline的格式问规则，false:兼容老的，true:全格式输出</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>structure</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>返回指定结构 0:普通列表 1：带项目名 2：个人设置类型</td>
+                                            <td></td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        
+                                                
+                        
+                    </div><h1 id="t_api_doc">任务自定义字段3期</h1>
+                    
+                    <div class="api-one">
                         <h3 id="dd65d228dbf249a39272fe4f16a0f46a">修改项目模板任务范围作用域</h3>
                         <p>
                             <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=dd65d228dbf249a39272fe4f16a0f46a" class="label label-warning">在线测试</a>
@@ -927,135 +1569,6 @@
                                                 
                         
                     </div><div class="api-one">
-                        <h3 id="e2bc1486eff44b0d9a436e282e6ce301">检查项转任务</h3>
-                        <p>
-                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=e2bc1486eff44b0d9a436e282e6ce301" class="label label-warning">在线测试</a>
-                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=e2bc1486eff44b0d9a436e282e6ce301" class="label label-warning">在线浏览</a>
-                        </p>
-                        <p>请求方式：POST</p>
-                        <p>
-                            请求地址：{{host}}/v1/task/add_task                        </p>
-                        
-                                                
-                                                    <table class="table table-hover">
-                                    <colgroup>
-                                    <col class="col-xs-2">
-                                    <col class="col-xs-1">
-                                    <col class="col-xs-1">
-                                    <col class="col-xs-7">
-                                    <col class="col-xs-2">
-                                  </colgroup>
-                                    <thead>
-                                         <tr>
-                                            <th><span class="label label-success">Body参数名</span></th>
-                                            <th>类型</th>
-                                            <th>必需</th>
-                                            <th>描述</th>
-                                            <th>示例 e.g.</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>access_token</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td>访问令牌</td>
-                                            <td>2422991b34a0436c95196cce3ec1c974</td>
-                                        </tr><tr>
-                                            <td>task_name</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td>任务名</td>
-                                            <td>检查项转任务</td>
-                                        </tr><tr>
-                                            <td>parent_id</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr><tr>
-                                            <td>task_description</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr><tr>
-                                            <td>deadline</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr><tr>
-                                            <td>charge_user_account_id</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr><tr>
-                                            <td>members</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr><tr>
-                                            <td>folder_id</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td>项目id（get_projectId_and_folder_for_item_convert_task接口获得的folder_id,可以重新指定</td>
-                                            <td>c35c71dc-e21f-4904-a03d-4c2e878c1b91</td>
-                                        </tr><tr>
-                                            <td>post_id</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr><tr>
-                                            <td>folder_stage_id</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr><tr>
-                                            <td>is_star</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr><tr>
-                                            <td>project_id</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td>网络id（get_projectId_and_folder_for_item_convert_task接口获得的project_id,可以重新指定）</td>
-                                            <td>c4c197af-2d49-4c6e-9eae-c197e361b743</td>
-                                        </tr><tr>
-                                            <td>attachments</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr><tr>
-                                            <td>knowledge_attach</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr><tr>
-                                            <td>item_id</td>
-                                            <td>string</td>
-                                            <td>是</td>
-                                            <td>检查项id（接口执行成功后会删除对应检查项）</td>
-                                            <td>5915277361cfa23158204507</td>
-                                        </tr>                                    </tbody>
-                                </table>                        
-                        <p>详细说明：</p>
-                        <p>
-                        <div class="detail-info">
-                            <div><div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><br></div><div><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;"><br></div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>data<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level1 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>task_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"be2fbbc6-1c25-4288-be8e-2f71a68bef6c"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>task_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"检查项转任务"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>project_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"北京联拓天际电子商务"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>des<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_lock<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>color<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_member<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>current_user_type<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>dead_line<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status_last_modify_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-05-12 12:05"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status_last_modify_user<span class="q" style="display: inline-block;">"</span></span>: <span class="null" style="color: rgb(67, 31, 255);">null</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>sub_count<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>create_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-05-12 12:05"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_favorite<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>permission<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span>,</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;"><br></div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>charge_user<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"陈霄毅"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>avatar<span class="q" style="display: inline-block;">"</span></span>: <a href="https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0<span class="q" style="display: inline-block;">"</span></a>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;"><br></div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>members<span class="q" style="display: inline-block;">"</span></span>: [<ul class="array level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;"><br></div>{<ul class="obj level3 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>member_type<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>apply_type<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"陈霄毅"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>en_full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"chenxiaoyi_cxy"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>mobile_phone<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>email<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"eve@md.md"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>avatar<span class="q" style="display: inline-block;">"</span></span>: <a href="https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0<span class="q" style="display: inline-block;">"</span></a>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>company_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"这是公司"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>profession<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"这是职位"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span></li></ul>}</li></ul>],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_notice<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span>,</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;"><br></div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>folder<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>folder_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"c35c71dc-e21f-4904-a03d-4c2e878c1b91"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>folder_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"111111111"</span></li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>charge_user_account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>task_status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>project_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"c4c197af-2d49-4c6e-9eae-c197e361b743"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>parent_task_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>completed_num<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>update_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-05-12 12:05"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>topic_count<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_new_task<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>stage_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"c1f6ce0c-48a0-4d56-bf9a-94527876e92d"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>stage_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"进行中"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_predefined<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>sub_tasks<span class="q" style="display: inline-block;">"</span></span>: [ ],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>categorys<span class="q" style="display: inline-block;">"</span></span>: [ ],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>classify<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span></li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span><br></div></div>
-                        </div>
-                        </p>
-                                                
-                        
-                    </div><div class="api-one">
                         <h3 id="0cdefc17008041f1addac6f160e25df8">获取讨论列表</h3>
                         <p>
                             <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=0cdefc17008041f1addac6f160e25df8" class="label label-warning">在线测试</a>
@@ -1345,6 +1858,23 @@
                                     <tr>
                                         <td>host</td>
                                         <td>http://172.17.10.244:11111</td>
+                                    </tr>                                </tbody>
+                            </table><h5><span class="label label-danger">host</span></h5>
+                            <table class="table table-hover" style="margin-top: 7px;">
+                                <colgroup>
+                                <col class="col-xs-4">
+                                <col class="col-xs-8">
+                              </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>变量名</th>
+                                        <th>变量值</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>host</td>
+                                        <td>http://localhost:7432</td>
                                     </tr>                                </tbody>
                             </table>
                      </div>
