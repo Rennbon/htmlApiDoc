@@ -41,6 +41,14 @@
                                 <ul class="nav list-group">
                                     
                                     <li>
+                                        <a href="#80f01025b81c46ad900ce9567600c97f">获取任务讨论及总数</a>
+                                    </li><li>
+                                        <a href="#6c907b60be714b4fa43f8525a437ef16">获取项目讨论及总数</a>
+                                    </li><li>
+                                        <a href="#755c1bff8459453591764aef43e326ae">修改项目名称</a>
+                                    </li><li>
+                                        <a href="#4c9a6ec233694efc995fe191a4666290">获取任务详情</a>
+                                    </li><li>
                                         <a href="#62a6aee9d5924f979a47ecbe86eac455">获取未关联项目的任务列表(新增time_format,必须穿true)</a>
                                     </li><li>
                                         <a href="#881b0153af1346158eb0a621fd859c0f">修改任务开始时间及截止时间</a>
@@ -120,6 +128,252 @@
                     <h1 id="t_api_doc">任务甘特图1期</h1>
                     
                     <div class="api-one">
+                        <h3 id="80f01025b81c46ad900ce9567600c97f">获取任务讨论及总数</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=80f01025b81c46ad900ce9567600c97f" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=80f01025b81c46ad900ce9567600c97f" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v1/task/get_task_discussions                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>01dc47d16f8e43dfac33658b63c62034</td>
+                                        </tr><tr>
+                                            <td>task_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>任务id</td>
+                                            <td>e7861394-7817-4abe-bbbe-5d7972a65375</td>
+                                        </tr><tr>
+                                            <td>page_index</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>请求页码</td>
+                                            <td>1</td>
+                                        </tr><tr>
+                                            <td>page_size</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>页面尺寸</td>
+                                            <td>20</td>
+                                        </tr><tr>
+                                            <td>only_me</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>只看自己</td>
+                                            <td></td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>data<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level1 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>count<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span>, //总数</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>discussions<span class="q" style="display: inline-block;">"</span></span>: [<ul class="array level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level3 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>topic_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"0002c8a6-c5ef-41b4-9d7a-8c1b6fe8694e"</span>, </li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>message<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"a"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>create_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-09-01 15:26:41"</span>,</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>create_user<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"陈霄毅"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>en_full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"ChenXiaoYi_CXY"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>mobile_phone<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>email<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"eve@md.md"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>avatar<span class="q" style="display: inline-block;">"</span></span>: <a href="https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0<span class="q" style="display: inline-block;">"</span></a>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>company_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"这是公司"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>profession<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"这是职位"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_private_mobile<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_private_email<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>project_company_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"这是公司"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>project_profession<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"这是职位"</span></li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>reply_user<span class="q" style="display: inline-block;">"</span></span>: <span class="null" style="color: rgb(67, 31, 255);">null</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>reply_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>attachments<span class="q" style="display: inline-block;">"</span></span>: <span class="null" style="color: rgb(67, 31, 255);">null</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>project_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"c4c197af-2d49-4c6e-9eae-c197e361b743"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_star<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>removed<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>app_source<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"明道"</span></li></ul>}</li></ul>]</li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span></div>
+                        </div>
+                        </p>
+                                                
+                        
+                    </div><div class="api-one">
+                        <h3 id="6c907b60be714b4fa43f8525a437ef16">获取项目讨论及总数</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=6c907b60be714b4fa43f8525a437ef16" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=6c907b60be714b4fa43f8525a437ef16" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v1/task/get_folder_discussions                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>01dc47d16f8e43dfac33658b63c62034</td>
+                                        </tr><tr>
+                                            <td>folder_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>项目id</td>
+                                            <td>cae55663-b273-4090-840f-ddefe08bfbaf</td>
+                                        </tr><tr>
+                                            <td>page_index</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>请求页码</td>
+                                            <td>1</td>
+                                        </tr><tr>
+                                            <td>page_size</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>页面尺寸</td>
+                                            <td>20</td>
+                                        </tr><tr>
+                                            <td>only_Include_mine</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>是否只看自己</td>
+                                            <td></td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>data<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level1 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>count<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span>,//总数</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>discussions<span class="q" style="display: inline-block;">"</span></span>: [<ul class="array level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level3 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>create_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-09-01 15:31:59"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>message<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"1"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>user_replied<span class="q" style="display: inline-block;">"</span></span>: <span class="null" style="color: rgb(67, 31, 255);">null</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>groups_was_at<span class="q" style="display: inline-block;">"</span></span>: [ ],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>users_was_at<span class="q" style="display: inline-block;">"</span></span>: [ ],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>comment_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"70c28196-7440-4da1-beb0-c6d8a58cfb39"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>attachments<span class="q" style="display: inline-block;">"</span></span>: <span class="null" style="color: rgb(67, 31, 255);">null</span>,</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>create_account<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level4 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"陈霄毅"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>avatar<span class="q" style="display: inline-block;">"</span></span>: <a href="https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0<span class="q" style="display: inline-block;">"</span></a>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span></li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>app_source<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"任务中心"</span></li></ul>}</li></ul>]</li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span></div>
+                        </div>
+                        </p>
+                                                
+                        
+                    </div><div class="api-one">
+                        <h3 id="755c1bff8459453591764aef43e326ae">修改项目名称</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=755c1bff8459453591764aef43e326ae" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=755c1bff8459453591764aef43e326ae" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：POST</p>
+                        <p>
+                            请求地址：{{host}}/v1/task/update_folder_name                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td></td>
+                                            <td>01dc47d16f8e43dfac33658b63c62034</td>
+                                        </tr><tr>
+                                            <td>folder_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td></td>
+                                            <td>cae55663-b273-4090-840f-ddefe08bfbaf</td>
+                                        </tr><tr>
+                                            <td>folder_name</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td></td>
+                                            <td>这是一个项目名</td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span></div>
+                        </div>
+                        </p>
+                                                
+                        
+                    </div><div class="api-one">
+                        <h3 id="4c9a6ec233694efc995fe191a4666290">获取任务详情</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=4c9a6ec233694efc995fe191a4666290" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=4c9a6ec233694efc995fe191a4666290" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v2/task/get_task_detail                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>45eec5d4aa0549a4804251c213c9c185</td>
+                                        </tr><tr>
+                                            <td>task_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>任务id</td>
+                                            <td>a0c5100f-f69b-4200-a250-aaaaca6f2712</td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">{</span><ul class="obj level0" style="margin-right: 0px; margin-bottom: 0px; margin-left: 2em; list-style: none; padding: 0px; font-family: consolas; font-size: 12px; white-space: pre-wrap;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>data<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level1 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>task_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"a0c5100f-f69b-4200-a250-aaaaca6f2712"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>task_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"eveTest"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>project_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"北京联拓天际电子商务2222"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>des<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_lock<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_member<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>current_user_type<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>dead_line<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>start_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status_last_modify_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-05-24 15:22"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status_last_modify_user<span class="q" style="display: inline-block;">"</span></span>: <span class="null" style="color: rgb(67, 31, 255);">null</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>sub_count<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>create_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-05-24 15:22"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_favorite<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>permission<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">2</span>,</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>charge_user<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"陈霄毅"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>avatar<span class="q" style="display: inline-block;">"</span></span>: <a href="https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0<span class="q" style="display: inline-block;">"</span></a>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span></li></ul>},</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>members<span class="q" style="display: inline-block;">"</span></span>: [<ul class="array level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level3 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>member_type<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>apply_type<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"陈霄毅"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>en_full_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"ChenXiaoYi_CXY"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>mobile_phone<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>email<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"eve@md.md"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>avatar<span class="q" style="display: inline-block;">"</span></span>: <a href="https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0" style="color: rgb(67, 31, 255); font-size: 13px;"><span class="q" style="display: inline-block;">"</span>https://dn-mdpic.qbox.me/UserAvatar/default2.png?watermark/2/text/6ZyE5q-F/font/5b6u6L2v6ZuF6buR/fontsize/600/fill/d2hpdGU=/dissolve/100/gravity/Center/dx/0/dy/0<span class="q" style="display: inline-block;">"</span></a>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>company_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"这是公司"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>profession<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"这是职位"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span></li></ul>}<br></li></ul>],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_notice<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span>,</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>folder<span class="q" style="display: inline-block;">"</span></span>: {<ul class="obj level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>folder_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"52c44872-1c09-4b91-b4a8-2dc9e34cd26a"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>folder_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"RT00000000000001"</span></li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>charge_user_account_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"58383fb3-78ee-4b95-a9ba-0dd9e2abc815"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>task_status<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>project_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"c4c197af-2d49-4c6e-9eae-c197e361b743"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>parent_task_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">""</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>completed_num<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>update_time<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"2017-09-13 18:46"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>topic_count<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_new_task<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>stage_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"82620010-73a2-4dbe-8c50-e850ea9c3859"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>stage_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"进行中"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>is_predefined<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>sub_tasks<span class="q" style="display: inline-block;">"</span></span>: [ ],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>tags<span class="q" style="display: inline-block;">"</span></span>: [ ],</li><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>stages<span class="q" style="display: inline-block;">"</span></span>: [<ul class="array level2 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><div class="collapser" style="position: absolute; left: -1em; cursor: pointer;">-</div>{<ul class="obj level3 collapsible" style="margin-right: 0px; margin-left: 2em; list-style: none; padding: 0px; transition: width 1.2s;"><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>stage_id<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"82620010-73a2-4dbe-8c50-e850ea9c3859"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>stage_name<span class="q" style="display: inline-block;">"</span></span>: <span class="string" style="font-size: 13px; color: rgb(67, 31, 255);">"进行中"</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>stage_order<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>tasks_count<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">1</span></li></ul>}</li></ul>],</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>classify<span class="q" style="display: inline-block;">"</span></span>: <span class="num" style="color: rgb(67, 31, 255);">0</span>,</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>has_controls<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">false</span></li></ul>},</li><li style="position: relative;"><span class="prop" style="color: rgb(145, 35, 108);"><span class="q" style="display: inline-block;">"</span>success<span class="q" style="display: inline-block;">"</span></span>: <span class="bool" style="color: rgb(67, 31, 255);">true</span></li></ul><span style="font-family: consolas; font-size: 12px; white-space: pre-wrap;">}</span></div>
+                        </div>
+                        </p>
+                                                
+                        
+                    </div><div class="api-one">
                         <h3 id="62a6aee9d5924f979a47ecbe86eac455">获取未关联项目的任务列表(新增time_format,必须穿true)</h3>
                         <p>
                             <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=62a6aee9d5924f979a47ecbe86eac455" class="label label-warning">在线测试</a>
