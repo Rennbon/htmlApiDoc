@@ -37,7 +37,29 @@
                     <ul class="nav list-group bs_list_group">
                         
                             <li>
-                                <span>项目及任务讨论</span>
+                                <span>关联控件相关</span>
+                                <ul class="nav list-group">
+                                    
+                                    <li>
+                                        <a href="#314fd770a27b401ebcf2b98eaeb59aa6">修改控件值</a>
+                                    </li><li>
+                                        <a href="#fb86c275e09748bb9e81e0874a6f8dde">按类别获取关联列表</a>
+                                    </li><li>
+                                        <a href="#e3c8fb57df9d4bd29b88f8df29413af8">获取任务控件</a>
+                                    </li>
+                                </ul><span>日程接口</span>
+                                <ul class="nav list-group">
+                                    
+                                    <li>
+                                        <a href="#71ec86fb5b8846e485d8ae34c20c182c">获取日程讨论</a>
+                                    </li>
+                                </ul><span>日程接口</span>
+                                <ul class="nav list-group">
+                                    
+                                    <li>
+                                        <a href="#3b57e3fbaa194a8aaaf23a0704f37386">创建日程</a>
+                                    </li>
+                                </ul><span>项目及任务讨论</span>
                                 <ul class="nav list-group">
                                     
                                     <li>
@@ -161,7 +183,286 @@
             <div class="col-md-9 docs_main">
                 <div class="block-doc-one">
                     
-                    <h1 id="t_api_doc">项目及任务讨论</h1>
+                    <h1 id="t_api_doc">关联控件相关</h1>
+                    
+                    <div class="api-one">
+                        <h3 id="314fd770a27b401ebcf2b98eaeb59aa6">修改控件值</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=314fd770a27b401ebcf2b98eaeb59aa6" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=314fd770a27b401ebcf2b98eaeb59aa6" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：POST</p>
+                        <p>
+                            请求地址：{{host}}/v2/task/update_control_value                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>72ee8cfdb0a5446692892dbb29538321</td>
+                                        </tr><tr>
+                                            <td>task_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>任务id</td>
+                                            <td>eb6d8733-551f-4078-b4a6-52c737316828</td>
+                                        </tr><tr>
+                                            <td>control_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>控件id</td>
+                                            <td>5a431f5c6944dd1ca4f66826</td>
+                                        </tr><tr>
+                                            <td>value</td>
+                                            <td>json</td>
+                                            <td>是</td>
+                                            <td>关联相关 type:关联类，sid:源id，sidext:日程用recurTime,isd:是否删除，为true时代表删除关联，false代表添加</td>
+                                            <td>{"type":1,"sid":"8faa37dc-a2d0-4c94-b49b-81c8b4553009","sidext":"","isd":false}</td>
+                                        </tr><tr>
+                                            <td>Knowledge_attach</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        <p>详细说明：</p>
+                        <p>
+                        <div class="detail-info">
+                            <div><div>添加时返回添加成功的实体</div>删除时，data为空<div><br></div></div>
+                        </div>
+                        </p>
+                        <p>返回示例：</p>
+                        <div class="highlight">
+                            <pre>
+                                <code class="json hljs">{
+    &quot;data&quot;: &quot;[{\&quot;type\&quot;:1,\&quot;sid\&quot;:\&quot;8faa37dc-a2d0-4c94-b49b-81c8b4553009\&quot;,\&quot;sidext\&quot;:\&quot;\&quot;,\&quot;accountId\&quot;:\&quot;bdc9ef24-94c5-49f7-81d8-067243d20a4f\&quot;,\&quot;fullname\&quot;:\&quot;穆晓\&quot;,\&quot;avatar\&quot;:\&quot;https://dn-mdpic.qbox.me/UserAvatar/10761e16-831a-4c11-ba31-002ec1cca4a4.jpg?imageView2/1/w/48/h/48/q/90\&quot;,\&quot;name\&quot;:\&quot;890890\&quot;,\&quot;ext1\&quot;:\&quot;\&quot;,\&quot;ext2\&quot;:\&quot;\&quot;,\&quot;link\&quot;:\&quot;http://localhost:10001/apps/task/task_8faa37dc-a2d0-4c94-b49b-81c8b4553009\&quot;}]&quot;,
+    &quot;success&quot;: true
+}</code>
+                            </pre>
+                        </div>                        
+                        
+                    </div><div class="api-one">
+                        <h3 id="fb86c275e09748bb9e81e0874a6f8dde">按类别获取关联列表</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=fb86c275e09748bb9e81e0874a6f8dde" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=fb86c275e09748bb9e81e0874a6f8dde" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v1/form/get_relation_sources                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>访问令牌</td>
+                                            <td>72ee8cfdb0a5446692892dbb29538321</td>
+                                        </tr><tr>
+                                            <td>type</td>
+                                            <td>integer</td>
+                                            <td>是</td>
+                                            <td>关联类型</td>
+                                            <td>1</td>
+                                        </tr><tr>
+                                            <td>source_type</td>
+                                            <td>integer</td>
+                                            <td>是</td>
+                                            <td>来源类型</td>
+                                            <td>1</td>
+                                        </tr><tr>
+                                            <td>source_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td>源id,任务处即任务id</td>
+                                            <td>eb6d8733-551f-4078-b4a6-52c737316828</td>
+                                        </tr><tr>
+                                            <td>keywords</td>
+                                            <td>string</td>
+                                            <td>否</td>
+                                            <td>关键字</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>page_index</td>
+                                            <td>integer</td>
+                                            <td>否</td>
+                                            <td>请求页码</td>
+                                            <td></td>
+                                        </tr><tr>
+                                            <td>page_size</td>
+                                            <td>integer</td>
+                                            <td>否</td>
+                                            <td>单页尺寸</td>
+                                            <td></td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        
+                        <p>返回示例：</p>
+                        <div class="highlight">
+                            <pre>
+                                <code class="json hljs">{
+    &quot;data&quot;: [
+        {
+            &quot;type&quot;: 1,
+            &quot;sid&quot;: &quot;5e8cab93-f00b-4c53-89eb-2d536b8d7db0&quot;,
+            &quot;sidext&quot;: &quot;&quot;,
+            &quot;accountId&quot;: &quot;bdc9ef24-94c5-49f7-81d8-067243d20a4f&quot;,
+            &quot;fullname&quot;: &quot;穆晓&quot;,
+            &quot;avatar&quot;: &quot;https://dn-mdpic.qbox.me/UserAvatar/10761e16-831a-4c11-ba31-002ec1cca4a4.jpg?imageView2/1/w/48/h/48/q/90&quot;,
+            &quot;name&quot;: &quot;werewr&quot;,
+            &quot;ext1&quot;: &quot;&quot;,
+            &quot;ext2&quot;: &quot;&quot;,
+            &quot;link&quot;: &quot;http://localhost:10001/apps/task/task_5e8cab93-f00b-4c53-89eb-2d536b8d7db0&quot;
+        }
+    ],
+    &quot;success&quot;: true
+}</code>
+                            </pre>
+                        </div>                        
+                        
+                    </div><div class="api-one">
+                        <h3 id="e3c8fb57df9d4bd29b88f8df29413af8">获取任务控件</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=e3c8fb57df9d4bd29b88f8df29413af8" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=e3c8fb57df9d4bd29b88f8df29413af8" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v2/task/get_task_controls                        </p>
+                        
+                                                
+                                                    <table class="table table-hover">
+                                    <colgroup>
+                                    <col class="col-xs-2">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-1">
+                                    <col class="col-xs-7">
+                                    <col class="col-xs-2">
+                                  </colgroup>
+                                    <thead>
+                                         <tr>
+                                            <th><span class="label label-success">Body参数名</span></th>
+                                            <th>类型</th>
+                                            <th>必需</th>
+                                            <th>描述</th>
+                                            <th>示例 e.g.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>access_token</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td></td>
+                                            <td>72ee8cfdb0a5446692892dbb29538321</td>
+                                        </tr><tr>
+                                            <td>task_id</td>
+                                            <td>string</td>
+                                            <td>是</td>
+                                            <td></td>
+                                            <td>eb6d8733-551f-4078-b4a6-52c737316828</td>
+                                        </tr>                                    </tbody>
+                                </table>                        
+                        
+                        <p>返回示例：</p>
+                        <div class="highlight">
+                            <pre>
+                                <code class="json hljs">{
+    &quot;data&quot;: [
+        {
+            &quot;value&quot;: &quot;[{\&quot;type\&quot;:1,\&quot;sid\&quot;:\&quot;8faa37dc-a2d0-4c94-b49b-81c8b4553009\&quot;,\&quot;sidext\&quot;:\&quot;\&quot;,\&quot;accountId\&quot;:\&quot;bdc9ef24-94c5-49f7-81d8-067243d20a4f\&quot;,\&quot;fullname\&quot;:\&quot;穆晓\&quot;,\&quot;avatar\&quot;:\&quot;https://dn-mdpic.qbox.me/UserAvatar/10761e16-831a-4c11-ba31-002ec1cca4a4.jpg?imageView2/1/w/48/h/48/q/90\&quot;,\&quot;name\&quot;:\&quot;890890\&quot;,\&quot;ext1\&quot;:\&quot;\&quot;,\&quot;ext2\&quot;:\&quot;\&quot;,\&quot;link\&quot;:\&quot;http://localhost:10001/apps/task/task_8faa37dc-a2d0-4c94-b49b-81c8b4553009\&quot;},{\&quot;type\&quot;:1,\&quot;sid\&quot;:\&quot;3ae05233-c1d4-4ce5-a6d7-cfe83c87f4e9\&quot;,\&quot;sidext\&quot;:\&quot;\&quot;,\&quot;accountId\&quot;:\&quot;bdc9ef24-94c5-49f7-81d8-067243d20a4f\&quot;,\&quot;fullname\&quot;:\&quot;穆晓\&quot;,\&quot;avatar\&quot;:\&quot;https://dn-mdpic.qbox.me/UserAvatar/10761e16-831a-4c11-ba31-002ec1cca4a4.jpg?imageView2/1/w/48/h/48/q/90\&quot;,\&quot;name\&quot;:\&quot;沃尔沃若\&quot;,\&quot;ext1\&quot;:\&quot;\&quot;,\&quot;ext2\&quot;:\&quot;\&quot;,\&quot;link\&quot;:\&quot;http://localhost:10001/apps/task/task_3ae05233-c1d4-4ce5-a6d7-cfe83c87f4e9\&quot;},{\&quot;type\&quot;:5,\&quot;sid\&quot;:\&quot;5a40bf1beb138a656da82507\&quot;,\&quot;sidext\&quot;:\&quot;\&quot;,\&quot;accountId\&quot;:\&quot;bdc9ef24-94c5-49f7-81d8-067243d20a4f\&quot;,\&quot;fullname\&quot;:\&quot;穆晓\&quot;,\&quot;avatar\&quot;:\&quot;https://dn-mdpic.qbox.me/UserAvatar/10761e16-831a-4c11-ba31-002ec1cca4a4.jpg?imageView2/1/w/48/h/48/q/90\&quot;,\&quot;name\&quot;:\&quot;穆晓发起的请假表单\&quot;,\&quot;ext1\&quot;:\&quot;1231231435345-2017-0005\&quot;,\&quot;ext2\&quot;:\&quot;2017-12-25 17:04:27\&quot;,\&quot;link\&quot;:\&quot;http://localhost:10001/hr/approval/req/c4c197af-2d49-4c6e-9eae-c197e361b7435a40bf1beb138a656da82507\&quot;}]&quot;,
+            &quot;control_id&quot;: &quot;5a431f5c6944dd1ca4f66826&quot;,
+            &quot;control_name&quot;: &quot;关联324&quot;,
+            &quot;type&quot;: 21,
+            &quot;row&quot;: 0,
+            &quot;col&quot;: 0,
+            &quot;hint&quot;: &quot;&quot;,
+            &quot;dot&quot;: 0,
+            &quot;unit&quot;: &quot;&quot;,
+            &quot;enum_default&quot;: 0,
+            &quot;options&quot;: null,
+            &quot;data_source&quot;: null
+        }
+    ],
+    &quot;success&quot;: true
+}</code>
+                            </pre>
+                        </div>                        
+                        
+                    </div><h1 id="t_api_doc">日程接口</h1>
+                    
+                    <div class="api-one">
+                        <h3 id="71ec86fb5b8846e485d8ae34c20c182c">获取日程讨论</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=71ec86fb5b8846e485d8ae34c20c182c" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=71ec86fb5b8846e485d8ae34c20c182c" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：GET</p>
+                        <p>
+                            请求地址：{{host}}/v2/calendar/get_calendar_discussion                        </p>
+                        
+                                                
+                                                                            
+                        
+                                                
+                        
+                    </div><h1 id="t_api_doc">日程接口</h1>
+                    
+                    <div class="api-one">
+                        <h3 id="3b57e3fbaa194a8aaaf23a0704f37386">创建日程</h3>
+                        <p>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=3b57e3fbaa194a8aaaf23a0704f37386" class="label label-warning">在线测试</a>
+                            <a target="_blank" href="http://apizza.cc/console/project/398abd1087e719440b93f4c192986c55/browse?api=3b57e3fbaa194a8aaaf23a0704f37386" class="label label-warning">在线浏览</a>
+                        </p>
+                        <p>请求方式：POST</p>
+                        <p>
+                            请求地址：{{host}}/v1/calendar/create_event                        </p>
+                        
+                                                
+                                                                            
+                        
+                                                
+                        
+                    </div><h1 id="t_api_doc">项目及任务讨论</h1>
                     
                     <div class="api-one">
                         <h3 id="0cdefc17008041f1addac6f160e25df8">获取任务讨论列表</h3>
@@ -3915,6 +4216,23 @@
                                     <tr>
                                         <td>host</td>
                                         <td>http://172.17.10.244:7432</td>
+                                    </tr>                                </tbody>
+                            </table><h5><span class="label label-danger">api2</span></h5>
+                            <table class="table table-hover" style="margin-top: 7px;">
+                                <colgroup>
+                                <col class="col-xs-4">
+                                <col class="col-xs-8">
+                              </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>变量名</th>
+                                        <th>变量值</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>host</td>
+                                        <td>https://api2.mingdao.com</td>
                                     </tr>                                </tbody>
                             </table>
                      </div>
